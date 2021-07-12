@@ -1,8 +1,11 @@
 ## Math API Server
 
-This time we're going to write an API server that solves math problems for us. Each route is a different formula to solve, and values will be passed as GET arguments.
+Description: an API server that solves math problems for us. Each route is a different formula to solve, and values will be passed as GET arguments<br>
+Language: Python<br>
+Project Type: School project, solo<br>
+Purpose: Further expand knowledge on how to program an API server, this time with more routes<br>
 
-Let's look at the area of a square route below. The route is listed as `/area/square` with one variable `s`. Calling `http://localhost:3001/area/square?s=10` should return JSON with the answer.  For that route the JSON returned would be.
+Let's look at the area of a square route below. The route is listed as `/area/square` with one variable `s`. Calling `http://localhost:3001/area/square?s=10` returns JSON with the answer.  For that route the JSON returned would be.
 
 ```json
 {
@@ -13,18 +16,15 @@ Let's look at the area of a square route below. The route is listed as `/area/sq
 
 _Note that they keys in the JSON are lower case._
 
-Each route must return any variables passed and the solution. Use the letters in the formulas listed as keys.
+Each route returns any variables passed and the solution. Use the letters in the formulas listed as keys.
 
-Routes must also return their data with the `application/json` content type and a `200` status code header, assuming it was a good request. 
+Routes also return their data with the `application/json` content type and a `200` status code header, assuming it was a good request. 
 
-There are two "bad requests" that you also need to account for.
+There are two "bad requests" that accounted for.
 
-* Incorrect route. This needs to return a 404 status header. 
-* Invalid or missing GET variables. This should return a 400 status header. This would be cases like `/area/square?x=10` where the variable is `x` instead of `s` or just calling `/area/square` without any variables. 
+* Incorrect route. This returns a 404 status header. 
+* Invalid or missing GET variables. This returns a 400 status header. This would be cases like `/area/square?x=10` where the variable is `x` instead of `s` or just calling `/area/square` without any variables. 
 
-
-
-Your code needs to start in the `mathapi.py` file, but you can add additional files if you would like. Running `python mathapi.py` should start your server.
 
 The server needs to be attached to `127.0.0.1` on port `3001`
 
